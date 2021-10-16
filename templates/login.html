@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 class="text-center text-success">Enter Details...for Login.</h1><hr>
+    <form  class="container" action="login" method="POST">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  </form><hr>
+  <div>
+
+  {%for message in messages%}
+  <p>{{message}}</p>
+  {%endfor%}
+
+</div>
+
+          <center><p>Don't have accounts <a href="login" ><b>Register</b></a></p></center>
+
+{% endblock body %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3 class="text-center text-success">Enter Details...for Registration.</h3><hr>
+<form class="container" action="register" method="POST">
+{% csrf_token %}
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="first_name" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="last_name" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" name="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Confirm_password</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" name="password2">
+  </div>
+  
+  <button type="submit" id="btn" class="btn btn-primary">Register</button>
+</form>
+<div>
+
+  {%for message in messages%}
+  <p>{{message}}</p>
+  {%endfor%}
+
+</div>
+
+          <center><p>If you have already registered <a href="login" ><b>Login</b></a></p></center>
+{% endblock body %}
+
